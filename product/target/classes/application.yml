@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: product-service
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+server:
+  port: 8081
+  servlet:
+    context-path: /product
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    registry-fetch-interval-seconds: 30
+    service-url:
+      defaultZone: http://localhost:1025/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    servlet:
+      context-path: /product

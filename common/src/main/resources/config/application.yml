@@ -1,0 +1,15 @@
+#������resourcesĿ¼�½�һ��configĿ¼��Ȼ���application.yml�Ž�ȥ����������ģ���ȡ������������
+spring:
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: localhost:9092
+  sleuth:
+    sampler:
+      probability: 1
+feign:
+  hystrix:
+    enabled: true

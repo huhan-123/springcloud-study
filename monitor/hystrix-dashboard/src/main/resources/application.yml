@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hystrix-server
+server:
+  port: 8085
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    registry-fetch-interval-seconds: 30
+    service-url:
+      defaultZone: http://localhost:1025/eureka
+#设置turbine需要监控的服务
+turbine:
+  app-config: order-service
+  #设置集群名称，用逗号隔开
+  aggregator:
+    cluster-config: order-service
+  cluster-name-expression: metadata['cluster']
+  #让同一个主机上面的服务通过主机名与端口号的组合来区分
+  combine-host-port: true
+  #由于服务设有context-path，以下设置也要加上响应前缀
+  instanceUrlSuffix:
+    order-service: order/actuator/hystrix.stream

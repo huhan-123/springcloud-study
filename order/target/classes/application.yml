@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: order-service
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+server:
+  port: 8082
+  servlet:
+    context-path: /order
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+    metadata-map:
+      cluster: order-service
+  client:
+    registry-fetch-interval-seconds: 30
+    service-url:
+      defaultZone: http://localhost:1025/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    servlet:
+      context-path: /order
