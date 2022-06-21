@@ -30,7 +30,7 @@
         <platform.bom.version>Cairo-SR4</platform.bom.version>
         <swagger2.version>2.9.2</swagger2.version>
         <mybatisPlus.version>3.0.5</mybatisPlus.version>
-        <mysql.connector.java.version>8.0.15</mysql.connector.java.version>
+        <mysql.connector.java.version>8.0.28</mysql.connector.java.version>
         <spring-boot-admin.version>2.0.6</spring-boot-admin.version>
         <zipkin.version>2.11.1</zipkin.version>
         <dynamic-datasource.version>2.4.2</dynamic-datasource.version>
